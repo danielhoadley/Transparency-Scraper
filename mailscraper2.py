@@ -6,7 +6,7 @@ import re
 
 import csv
 
-words = ['divorce', 'custody', 'meal ticket', 'behind closed doors', 'detail of the case emerged on a legal database', ]
+words = ['divorce', 'custody battle', 'meal ticket', 'behind closed doors', 'detail of the case emerged on a legal database', ]
 
 hit_article = []
 links_list = []
@@ -18,9 +18,10 @@ d = feedparser.parse('http://www.dailymail.co.uk/articles.rss')
 for item in d.entries:
     link = ( item[ "link" ] )
     links_list.append(link)
+    title = ( item ["title"])
 
 
-for link in links_list:
+for link in links_list[:100]:
     page = requests.get(link)
     tree = html.fromstring(page.content)
 
@@ -33,7 +34,7 @@ for link in links_list:
         regex = r"\b"+ re.escape(word) + r"\b"
         match = re.search(regex, text)
         if match:
-            print (word, "________found")
+            print (word, ' ', title, "________found")
             hits.append(word)
             hit_link.append(str(link))
 
