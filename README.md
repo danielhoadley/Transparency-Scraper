@@ -1,7 +1,7 @@
 # Transparency-Scraper
 Scrapes the Daily Wail Online for articles containing specific words and phrases
 
-###What is this?
+### What is this?
 
 A member of the **Transparency Project** asked me whether it is possible to scrape news articles published on various online news outlets for articles containing certain *trigger words* that could be used to flag articles of interest to the members of the Transparency Project.
 
