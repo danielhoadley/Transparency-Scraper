@@ -20,11 +20,6 @@ def search_article(url, phrases):
             if re.search(r'\b' + re.escape(phrase) + r'\b', block):
                 yield phrase
 
-
-
-
-
-
 def search_rss(rss_entries, phrases):
     """
     Search articles listed in the RSS entries for phases, yielding
